@@ -1,4 +1,6 @@
 # https://api.rubyonrails.org/classes/Rails/Railtie.html
+require 'rails/railtie'
+
 module QueryCount
   class Railtie < Rails::Railtie
     initializer 'query_count.initialize' do

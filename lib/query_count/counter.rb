@@ -1,4 +1,6 @@
 # https://api.rubyonrails.org/classes/ActiveRecord/LogSubscriber.html
+require 'active_support'
+
 module QueryCount
   class Counter < ActiveSupport::LogSubscriber
     IGNORE_PAYLOAD_NAMES = %w[SCHEMA EXPLAIN].freeze
