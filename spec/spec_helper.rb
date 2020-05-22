@@ -1,3 +1,7 @@
+ENV['RAILS_ENV'] ||= 'test'
+
+require File.expand_path('support/dummy_rails_app/config/environment.rb', __dir__)
+
 require 'bundler/setup'
 require 'query_count'
 
@@ -10,5 +14,17 @@ RSpec.configure do |config|
 
   config.expect_with :rspec do |c|
     c.syntax = :expect
+  end
+
+  config.before(:suite) do
+    ActiveRecord::Schema.verbose = false
+    ActiveRecord::MigrationContext.new(
+      'spec/support/dummy_rails_app/db/migrate',
+      ActiveRecord::Base.connection.schema_migration
+    ).migrate
+  end
+
+  config.after(:suite) do
+    FileUtils.rm('spec/support/dummy_rails_app/db/query_test.db')
   end
 end
