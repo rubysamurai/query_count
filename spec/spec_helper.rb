@@ -18,10 +18,14 @@ RSpec.configure do |config|
 
   config.before(:suite) do
     ActiveRecord::Schema.verbose = false
-    ActiveRecord::MigrationContext.new(
-      'spec/support/dummy_rails_app/db/migrate',
-      ActiveRecord::Base.connection.schema_migration
-    ).migrate
+    migration_path = 'spec/support/dummy_rails_app/db/migrate'
+    if ActiveRecord::VERSION::STRING.to_f >= 6.0
+      ActiveRecord::MigrationContext.new(migration_path, ActiveRecord::SchemaMigration).migrate
+    elsif ActiveRecord::VERSION::STRING.to_f >= 5.2
+      ActiveRecord::MigrationContext.new(migration_path).migrate
+    else
+      ActiveRecord::Migrator.migrate(migration_path)
+    end
   end
 
   config.after(:suite) do
