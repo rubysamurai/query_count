@@ -1,7 +1,7 @@
 # Query Count
 
 [![Gem Version](https://badge.fury.io/rb/query_count.svg)](https://badge.fury.io/rb/query_count)
-[![Build Status](https://travis-ci.com/rubysamurai/query_count.svg?branch=master)](https://travis-ci.com/rubysamurai/query_count)
+[![CI](https://github.com/rubysamurai/query_count/workflows/CI/badge.svg)](https://github.com/rubysamurai/query_count/actions?query=workflow%3ACI)
 
 Counts the number of SQL queries performed by the ActiveRecord.
 
