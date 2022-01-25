@@ -3,7 +3,8 @@
 [![Gem Version](https://badge.fury.io/rb/query_count.svg)](https://badge.fury.io/rb/query_count)
 [![CI](https://github.com/rubysamurai/query_count/workflows/CI/badge.svg)](https://github.com/rubysamurai/query_count/actions?query=workflow%3ACI)
 
-Counts the number of SQL queries performed by the ActiveRecord.
+A zero-configuration gem to count the number of SQL queries performed by the ActiveRecord.
+Supports **Rails 4.2+** and **Ruby 2.0+** (the complete testing matrix is [here](.github/workflows/ci.yml)).
 
 ## Installation
 
@@ -13,23 +14,23 @@ Add this line to your application's Gemfile:
 gem 'query_count'
 ```
 
-Run `$ bundle install`
+Run `bundle install`.
 
 ## Usage
 
-The gem will automatically include the number of SQL queries  to the Rails log.
+The gem will automatically include the number of SQL queries to the default Rails log.
 
 ```
 ActiveRecord: 34.0ms | SQL Queries: 8 (1 cached)
 ```
 
-This log example shows that the total number of queries was 8 and 1 of those queries was cached. Meaning that the database was hit 7 times.
+This log example shows that the total number of queries was 8, and 1 was cached, which means the request hit the database 7 times.
 
-`QueryCount::Counter` provides public methods `counter`, `counter_cache`, `reset_counter`, `reset_counter_cache` to use, for instance, in rake tasks and tests.
+`QueryCount::Counter` provides public methods `counter`, `counter_cache`, `reset_counter`, `reset_counter_cache`.
 
 RSpec 3 example:
 
-```
+```ruby
 it 'performs exactly 5 queries' do
   QueryCount::Counter.reset_counter
   5.times { User.last }
