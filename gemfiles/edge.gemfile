@@ -1,0 +1,5 @@
+git 'https://github.com/rails/rails.git' do
+  gem 'activerecord'
+  gem 'railties'
+  gem 'activemodel'
+end

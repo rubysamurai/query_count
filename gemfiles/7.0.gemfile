@@ -1,0 +1,2 @@
+gem 'activerecord', '~> 7.0.0'
+gem 'railties', '~> 7.0.0'
