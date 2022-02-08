@@ -6,8 +6,8 @@ module QueryCount
     module ClassMethods
       def log_process_action(payload)
         messages    = super
-        count       = payload[:query_count]
-        count_cache = payload[:query_count_cache]
+        count       = payload[:query_count] || 0
+        count_cache = payload[:query_count_cache] || 0
 
         messages.push(
           "SQL Queries: #{count + count_cache}"\
