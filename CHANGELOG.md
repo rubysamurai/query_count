@@ -3,7 +3,7 @@
 
 ### Bug Fixes
 
-*  Prevent `NoMethodError` when the database is not established ([#1](https://github.com/rubysamurai/query_count/pull/1)) ([ff8a47b](https://github.com/rubysamurai/query_count/commit/ff8a47b8fd223e24588c2eb08e0ded3bc7df4b28)) (@tubaxenor)
+*  Prevent `NoMethodError` when the database connection is not established ([#1](https://github.com/rubysamurai/query_count/pull/1)) ([ff8a47b](https://github.com/rubysamurai/query_count/commit/ff8a47b8fd223e24588c2eb08e0ded3bc7df4b28)) (@tubaxenor)
 
 
 
