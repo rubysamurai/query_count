@@ -1,3 +1,12 @@
+# [1.1.1](https://github.com/rubysamurai/query_count/compare/v1.1.0...v1.1.1) (2022-02-13)
+
+
+### Bug Fixes
+
+*  Prevent `NoMethodError` when the database is not established ([#1](https://github.com/rubysamurai/query_count/pull/1)) ([ff8a47b](https://github.com/rubysamurai/query_count/commit/ff8a47b8fd223e24588c2eb08e0ded3bc7df4b28)) (@tubaxenor)
+
+
+
 # [1.1.0](https://github.com/rubysamurai/query_count/compare/v1.0.0...v1.1.0) (2022-01-26)
 
 
