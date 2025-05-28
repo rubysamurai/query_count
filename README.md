@@ -3,6 +3,8 @@
 [![Gem Version](https://badge.fury.io/rb/query_count.svg)](https://badge.fury.io/rb/query_count)
 [![CI](https://github.com/rubysamurai/query_count/workflows/CI/badge.svg)](https://github.com/rubysamurai/query_count/actions?query=workflow%3ACI)
 
+> **Rails 7.2 introduced built-in query counting functionality, making this gem redundant for Rails 7.2 and newer.**
+
 A zero-configuration gem to count the number of SQL queries performed by the ActiveRecord.
 Supports **Rails 4.2+** and **Ruby 2.0+** (the complete testing matrix is [here](.github/workflows/ci.yml)).
 
